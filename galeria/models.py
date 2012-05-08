@@ -26,12 +26,12 @@ COVER_IMAGE_PROCESSORS = getattr(settings, 'GALERIA_COVER_IMAGE_PROCESSORS', [
 ])
 
 ORDER_CHOICES = (
-    ('-date_added', 'Descending by addition date'),
-    ('date_added',  'Ascending by addition date'),
-    ('-date_taken', 'Descending by date taken'),
-    ('date_daten',  'Ascending by date taken'),
-    ('-date_modified', 'Descending by modification date'),
-    ('date_modified',  'Ascending by modification date'),
+    ('-date_added', _('Descending by addition date')),
+    ('date_added',  _('Ascending by addition date')),
+    ('-date_taken', _('Descending by date taken')),
+    ('date_daten',  _('Ascending by date taken')),
+    ('-date_modified', _('Descending by modification date')),
+    ('date_modified',  _('Ascending by modification date')),
 )
 
 
@@ -126,12 +126,12 @@ class PictureManager(models.Manager):
 
 
 class Picture(models.Model):
-    title = models.CharField(max_length=256)
+    title = models.CharField(_('title'), max_length=256)
     slug = models.SlugField(_('slug'), max_length=256)
     date_added = models.DateTimeField(_('date added'), auto_now_add=True)
     date_modified = models.DateTimeField(_('date modified'), auto_now=True)
     date_taken = models.DateTimeField(_('date taken'), null=True, editable=False)
-    original_image = models.ImageField(upload_to=picture_imagefield_path)
+    original_image = models.ImageField(_('original image'), upload_to=picture_imagefield_path)
     display_image = ImageSpec(
         DISPLAY_IMAGE_PROCESSORS,
         image_field='original_image',
