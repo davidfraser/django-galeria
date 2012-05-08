@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Django Galeria\n"
 "Report-Msgid-Bugs-To: https://bitbucket.org/semente/django-galeria/issues\n"
-"POT-Creation-Date: 2012-05-08 18:03-0300\n"
-"PO-Revision-Date: 2012-05-08 21:10+0000\n"
+"POT-Creation-Date: 2012-05-08 19:04-0300\n"
+"PO-Revision-Date: 2012-05-08 22:08+0000\n"
 "Last-Translator: Guilherme Gondim <semente+transifex@taurinus.org>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.net/projects/p/django-galeria/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,35 @@ msgstr ""
 msgid "<em>Not defined</em>"
 msgstr "<em>Não definido</em>"
 
-#: models.py:46
+#: admin.py:36
+msgid "Cover"
+msgstr "Capa"
+
+#: models.py:29
+msgid "Descending by addition date"
+msgstr "Decrescente por data de adição"
+
+#: models.py:30
+msgid "Ascending by addition date"
+msgstr "Crescente por data de adição"
+
+#: models.py:31
+msgid "Descending by date taken"
+msgstr "Decrescente por data da foto"
+
+#: models.py:32
+msgid "Ascending by date taken"
+msgstr "Crescente por data da foto"
+
+#: models.py:33
+msgid "Descending by modification date"
+msgstr "Decrescente por data de modificação"
+
+#: models.py:34
+msgid "Ascending by modification date"
+msgstr "Crescente por data de modificação"
+
+#: models.py:46 models.py:129
 msgid "title"
 msgstr "título"
 
@@ -52,7 +80,7 @@ msgstr "A ordem padrão para as imagens deste álbum."
 
 #: models.py:68
 msgid "parent"
-msgstr "álbum pai"
+msgstr "ascendente"
 
 #: models.py:73
 msgid "cover"
@@ -69,6 +97,10 @@ msgstr "data de modificação"
 #: models.py:133
 msgid "date taken"
 msgstr "data da foto"
+
+#: models.py:134
+msgid "original image"
+msgstr "imagem original"
 
 #: models.py:159
 msgid "Public images will be displayed in the default views."

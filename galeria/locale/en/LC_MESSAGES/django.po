@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-08 18:03-0300\n"
+"POT-Creation-Date: 2012-05-08 19:04-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,35 @@ msgstr ""
 msgid "<em>Not defined</em>"
 msgstr ""
 
-#: models.py:46
+#: admin.py:36
+msgid "Cover"
+msgstr ""
+
+#: models.py:29
+msgid "Descending by addition date"
+msgstr ""
+
+#: models.py:30
+msgid "Ascending by addition date"
+msgstr ""
+
+#: models.py:31
+msgid "Descending by date taken"
+msgstr ""
+
+#: models.py:32
+msgid "Ascending by date taken"
+msgstr ""
+
+#: models.py:33
+msgid "Descending by modification date"
+msgstr ""
+
+#: models.py:34
+msgid "Ascending by modification date"
+msgstr ""
+
+#: models.py:46 models.py:129
 msgid "title"
 msgstr ""
 
@@ -67,6 +95,10 @@ msgstr ""
 
 #: models.py:133
 msgid "date taken"
+msgstr ""
+
+#: models.py:134
+msgid "original image"
 msgstr ""
 
 #: models.py:159
