@@ -2,8 +2,8 @@
 Django Galeria
 ==============
 
-**Django Galeria** is a pluggable gallery/portfolio application for `Django Web
- Framework`_.
+**Django Galeria** is a pluggable gallery/portfolio application for
+`Django Web Framework`_.
 
 It is a fork of Luka Cehovin's `django-gallery`.
 
