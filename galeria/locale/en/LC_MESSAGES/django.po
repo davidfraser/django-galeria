@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-08 19:26-0300\n"
+"POT-Creation-Date: 2012-05-08 19:49-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: admin.py:33
+#: admin.py:11
+msgid "Expand tree"
+msgstr ""
+
+#: admin.py:12
+msgid "Collapse tree"
+msgstr ""
+
+#: admin.py:39
 msgid "<em>Not defined</em>"
 msgstr ""
 
-#: admin.py:36 models.py:73
+#: admin.py:42 models.py:73
 msgid "cover"
 msgstr ""
 
-#: admin.py:51
+#: admin.py:57
 msgid "thumbnail"
 msgstr ""
 

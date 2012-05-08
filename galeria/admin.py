@@ -7,6 +7,11 @@ from feincms.admin import editor
 from galeria.models import Album, Picture
 
 
+# Hack to easier translate some strings from FeinCMS
+OPEN_TREE_STR = _('Expand tree')
+COLLAPSE_TREE_STR = _('Collapse tree')
+
+
 class AlbumAdminForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
@@ -25,6 +30,7 @@ class AlbumAdmin(editor.TreeEditor):
     list_display = ('title', 'album_cover', 'is_public', 'order')
     list_filter = ['is_public']
     prepopulated_fields = {'slug': ('title',)}
+    search_fields = ('title', 'slug', 'description')
     #mptt_level_indent = 20
 
     def album_cover(self, obj):
@@ -40,9 +46,9 @@ class PictureAdmin(admin.ModelAdmin):
     list_display = ('admin_thumbnail', 'title', 'album', 'date_added', 'is_public')
     list_display_links = ['title']
     list_filter = ['date_added', 'album', 'is_public']
-    prepopulated_fields = {'slug': ('title',)}
-    search_fields = ['title', 'title_slug', 'text']
     list_per_page = 20
+    prepopulated_fields = {'slug': ('title',)}
+    search_fields = ('title', 'slug', 'description')
 
     admin_thumbnail = AdminThumbnail(
         image_field='thumbnail_image',

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Django Galeria\n"
 "Report-Msgid-Bugs-To: https://bitbucket.org/semente/django-galeria/issues\n"
-"POT-Creation-Date: 2012-05-08 19:26-0300\n"
-"PO-Revision-Date: 2012-05-08 22:26+0000\n"
+"POT-Creation-Date: 2012-05-08 19:49-0300\n"
+"PO-Revision-Date: 2012-05-08 22:49+0000\n"
 "Last-Translator: Guilherme Gondim <semente+transifex@taurinus.org>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.net/projects/p/django-galeria/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -18,15 +18,23 @@ msgstr ""
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
 
-#: admin.py:33
+#: admin.py:11
+msgid "Expand tree"
+msgstr "Expandir árvore"
+
+#: admin.py:12
+msgid "Collapse tree"
+msgstr "Encolher árvore"
+
+#: admin.py:39
 msgid "<em>Not defined</em>"
 msgstr "<em>Não definido</em>"
 
-#: admin.py:36 models.py:73
+#: admin.py:42 models.py:73
 msgid "cover"
 msgstr "capa"
 
-#: admin.py:51
+#: admin.py:57
 msgid "thumbnail"
 msgstr "miniatura"
 
