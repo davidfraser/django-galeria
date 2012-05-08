@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Django Galeria\n"
 "Report-Msgid-Bugs-To: https://bitbucket.org/semente/django-galeria/issues\n"
-"POT-Creation-Date: 2012-05-08 19:04-0300\n"
-"PO-Revision-Date: 2012-05-08 22:08+0000\n"
+"POT-Creation-Date: 2012-05-08 19:26-0300\n"
+"PO-Revision-Date: 2012-05-08 22:26+0000\n"
 "Last-Translator: Guilherme Gondim <semente+transifex@taurinus.org>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.net/projects/p/django-galeria/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -22,9 +22,13 @@ msgstr ""
 msgid "<em>Not defined</em>"
 msgstr "<em>Não definido</em>"
 
-#: admin.py:36
-msgid "Cover"
-msgstr "Capa"
+#: admin.py:36 models.py:73
+msgid "cover"
+msgstr "capa"
+
+#: admin.py:51
+msgid "thumbnail"
+msgstr "miniatura"
 
 #: models.py:29
 msgid "Descending by addition date"
@@ -50,19 +54,19 @@ msgstr "Decrescente por data de modificação"
 msgid "Ascending by modification date"
 msgstr "Crescente por data de modificação"
 
-#: models.py:46 models.py:129
+#: models.py:46 models.py:131
 msgid "title"
 msgstr "título"
 
-#: models.py:48 models.py:130
+#: models.py:48 models.py:132
 msgid "slug"
 msgstr "slug"
 
-#: models.py:51 models.py:155
+#: models.py:51 models.py:157
 msgid "description"
 msgstr "descrição"
 
-#: models.py:53 models.py:157
+#: models.py:53 models.py:159
 msgid "is public"
 msgstr "público"
 
@@ -79,41 +83,41 @@ msgid "The default order of pictures for this album."
 msgstr "A ordem padrão para as imagens deste álbum."
 
 #: models.py:68
-msgid "parent"
-msgstr "ascendente"
+msgid "parent album"
+msgstr "álbum ascendente"
 
-#: models.py:73
-msgid "cover"
-msgstr "capa"
-
-#: models.py:79 models.py:131
+#: models.py:79 models.py:133
 msgid "date added"
 msgstr "data de adição"
 
-#: models.py:132
-msgid "date modified"
-msgstr "data de modificação"
-
-#: models.py:133
-msgid "date taken"
-msgstr "data da foto"
-
-#: models.py:134
-msgid "original image"
-msgstr "imagem original"
-
-#: models.py:159
-msgid "Public images will be displayed in the default views."
-msgstr "Imagens públicas serão exibidas nas views padrão."
-
-#: models.py:163
+#: models.py:85 models.py:165
 msgid "album"
 msgstr "álbum"
 
-#: models.py:172
+#: models.py:86
+msgid "albums"
+msgstr "álbuns"
+
+#: models.py:134
+msgid "date modified"
+msgstr "data de modificação"
+
+#: models.py:135
+msgid "date taken"
+msgstr "data da foto"
+
+#: models.py:136
+msgid "image"
+msgstr "imagem"
+
+#: models.py:161
+msgid "Public images will be displayed in the default views."
+msgstr "Imagens públicas serão exibidas nas views padrão."
+
+#: models.py:174
 msgid "picture"
 msgstr "imagem"
 
-#: models.py:173
+#: models.py:175
 msgid "pictures"
 msgstr "imagens"

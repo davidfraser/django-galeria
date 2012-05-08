@@ -33,7 +33,7 @@ class AlbumAdmin(editor.TreeEditor):
             return _('<em>Not defined</em>')
         return '<img src="%s" alt="%s" style="width: 42px;" />' % (cover.cover_image.url, cover.title)
     album_cover.allow_tags = True
-    album_cover.short_description = _('Cover')
+    album_cover.short_description = _('cover')
 
 
 class PictureAdmin(admin.ModelAdmin):
@@ -48,6 +48,7 @@ class PictureAdmin(admin.ModelAdmin):
         image_field='thumbnail_image',
         template='galeria/admin/thumbnail.html'
     )
+    admin_thumbnail.short_description = _('thumbnail')
 
 admin.site.register(Album, AlbumAdmin)
 admin.site.register(Picture, PictureAdmin)

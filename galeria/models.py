@@ -65,7 +65,7 @@ class Album(MPTTModel):
         'self',
         null=True,
         blank=True,
-        verbose_name=_('parent'),
+        verbose_name=_('parent album'),
         related_name='children'
     )
     cover = models.ForeignKey(
@@ -82,6 +82,8 @@ class Album(MPTTModel):
 
     class Meta:
         unique_together = (('slug', 'parent'),)
+        verbose_name = _('album')
+        verbose_name_plural = _('albums')
 
     def __unicode__(self):
         return unicode(self.title)
@@ -131,7 +133,7 @@ class Picture(models.Model):
     date_added = models.DateTimeField(_('date added'), auto_now_add=True)
     date_modified = models.DateTimeField(_('date modified'), auto_now=True)
     date_taken = models.DateTimeField(_('date taken'), null=True, editable=False)
-    original_image = models.ImageField(_('original image'), upload_to=picture_imagefield_path)
+    original_image = models.ImageField(_('image'), upload_to=picture_imagefield_path)
     display_image = ImageSpec(
         DISPLAY_IMAGE_PROCESSORS,
         image_field='original_image',
