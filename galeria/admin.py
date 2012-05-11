@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 from imagekit.admin import AdminThumbnail
-from feincms.admin import editor
 
 from galeria.forms import AlbumAdminForm
 from galeria.models import Album, Picture
@@ -35,7 +34,7 @@ class InlinePictureAdmin(admin.TabularInline):
     model = Picture
     prepopulated_fields = {'slug': ('title',)}
 
-class AlbumAdmin(editor.TreeEditor):
+class AlbumAdmin(admin.ModelAdmin):
     form = AlbumAdminForm
     inlines = [InlinePictureAdmin]
     list_display = ('title', 'album_cover', 'is_public', 'order')
