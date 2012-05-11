@@ -13,18 +13,19 @@ COLLAPSE_TREE_STR = _('Collapse tree')
 
 
 class PictureAdmin(admin.ModelAdmin):
-    list_display = ('admin_thumbnail', 'title', 'album', 'date_added', 'is_public')
-    list_display_links = ['title']
-    list_filter = ['date_added', 'album', 'is_public']
+    list_display = ('thumbnail', 'title', 'is_public', 'album', 'date_added')
+    list_display_links = ('title',)
+    list_editable = ('album', 'is_public')
+    list_filter = ('date_added', 'album', 'is_public')
     list_per_page = 20
     prepopulated_fields = {'slug': ('title',)}
     search_fields = ('title', 'slug', 'description')
 
-    admin_thumbnail = AdminThumbnail(
+    thumbnail = AdminThumbnail(
         image_field='thumbnail_image',
         template='galeria/admin/thumbnail.html'
     )
-    admin_thumbnail.short_description = _('thumbnail')
+    thumbnail.short_description = _('thumbnail')
 
 admin.site.register(Picture, PictureAdmin)
 
@@ -38,6 +39,7 @@ class AlbumAdmin(editor.TreeEditor):
     form = AlbumAdminForm
     inlines = [InlinePictureAdmin]
     list_display = ('title', 'album_cover', 'is_public', 'order')
+    list_editable = ('is_public', 'order')
     list_filter = ['is_public']
     prepopulated_fields = {'slug': ('title',)}
     search_fields = ('title', 'slug', 'description')
