@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-11 17:10-0300\n"
+"POT-Creation-Date: 2012-05-11 19:57-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,120 +17,112 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: admin.py:11
-msgid "Expand tree"
-msgstr ""
-
-#: admin.py:12
-msgid "Collapse tree"
-msgstr ""
-
-#: admin.py:39
-msgid "<em>Not defined</em>"
-msgstr ""
-
-#: admin.py:42 models.py:75
-msgid "cover"
-msgstr ""
-
-#: admin.py:57
+#: admin.py:22
 msgid "thumbnail"
 msgstr ""
 
-#: models.py:29
-msgid "Descending by addition date"
+#: admin.py:45
+msgid "<em>Not defined</em>"
 msgstr ""
 
-#: models.py:30
-msgid "Ascending by addition date"
+#: admin.py:48 models.py:77
+msgid "cover"
 msgstr ""
 
 #: models.py:31
-msgid "Descending by date taken"
+msgid "Descending by addition date"
 msgstr ""
 
 #: models.py:32
-msgid "Ascending by date taken"
+msgid "Ascending by addition date"
 msgstr ""
 
 #: models.py:33
-msgid "Descending by modification date"
+msgid "Descending by date taken"
 msgstr ""
 
 #: models.py:34
+msgid "Ascending by date taken"
+msgstr ""
+
+#: models.py:35
+msgid "Descending by modification date"
+msgstr ""
+
+#: models.py:36
 msgid "Ascending by modification date"
 msgstr ""
 
-#: models.py:46 models.py:133
+#: models.py:48 models.py:135
 msgid "title"
 msgstr ""
 
-#: models.py:48 models.py:135
+#: models.py:50 models.py:137
 msgid "slug"
 msgstr ""
 
-#: models.py:50 models.py:137
+#: models.py:52 models.py:139
 msgid ""
 "Automatically built from the title. A slug is a short label generally used "
 "in URLs."
 msgstr ""
 
-#: models.py:53 models.py:164
+#: models.py:55 models.py:163
 msgid "description"
 msgstr ""
 
-#: models.py:55 models.py:166
+#: models.py:57 models.py:165
 msgid "is public"
 msgstr ""
 
-#: models.py:57
+#: models.py:59
 msgid "Only public albums will be displayed in the default views."
 msgstr ""
 
-#: models.py:60
+#: models.py:62
 msgid "order"
 msgstr ""
 
-#: models.py:64
+#: models.py:66
 msgid "The default order of pictures for this album."
 msgstr ""
 
-#: models.py:70
+#: models.py:72
 msgid "parent album"
 msgstr ""
 
-#: models.py:81 models.py:140
+#: models.py:83 models.py:142
 msgid "date added"
 msgstr ""
 
-#: models.py:87 models.py:172
+#: models.py:89 models.py:171
 msgid "album"
 msgstr ""
 
-#: models.py:88
+#: models.py:90
 msgid "albums"
 msgstr ""
 
-#: models.py:141
+#: models.py:143
 msgid "date modified"
 msgstr ""
 
-#: models.py:142
+#: models.py:144
 msgid "date taken"
 msgstr ""
 
-#: models.py:143
+#: models.py:145
 msgid "image"
 msgstr ""
 
-#: models.py:168
+#: models.py:167
 msgid "Public images will be displayed in the default views."
 msgstr ""
 
-#: models.py:181
+#: models.py:180
 msgid "picture"
 msgstr ""
 
-#: models.py:182
+#: models.py:181
 msgid "pictures"
 msgstr ""

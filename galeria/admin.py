@@ -6,11 +6,6 @@ from galeria.forms import AlbumAdminForm
 from galeria.models import Album, Picture
 
 
-# Hack to easier translate some strings from FeinCMS
-OPEN_TREE_STR = _('Expand tree')
-COLLAPSE_TREE_STR = _('Collapse tree')
-
-
 class PictureAdmin(admin.ModelAdmin):
     list_display = ('thumbnail', 'title', 'is_public', 'album', 'date_added')
     list_display_links = ('title',)
