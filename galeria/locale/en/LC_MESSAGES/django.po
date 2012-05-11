@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-08 19:49-0300\n"
+"POT-Creation-Date: 2012-05-11 17:10-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "<em>Not defined</em>"
 msgstr ""
 
-#: admin.py:42 models.py:73
+#: admin.py:42 models.py:75
 msgid "cover"
 msgstr ""
 
@@ -61,70 +61,76 @@ msgstr ""
 msgid "Ascending by modification date"
 msgstr ""
 
-#: models.py:46 models.py:131
+#: models.py:46 models.py:133
 msgid "title"
 msgstr ""
 
-#: models.py:48 models.py:132
+#: models.py:48 models.py:135
 msgid "slug"
 msgstr ""
 
-#: models.py:51 models.py:157
+#: models.py:50 models.py:137
+msgid ""
+"Automatically built from the title. A slug is a short label generally used "
+"in URLs."
+msgstr ""
+
+#: models.py:53 models.py:164
 msgid "description"
 msgstr ""
 
-#: models.py:53 models.py:159
+#: models.py:55 models.py:166
 msgid "is public"
 msgstr ""
 
-#: models.py:55
+#: models.py:57
 msgid "Only public albums will be displayed in the default views."
 msgstr ""
 
-#: models.py:58
+#: models.py:60
 msgid "order"
 msgstr ""
 
-#: models.py:62
+#: models.py:64
 msgid "The default order of pictures for this album."
 msgstr ""
 
-#: models.py:68
+#: models.py:70
 msgid "parent album"
 msgstr ""
 
-#: models.py:79 models.py:133
+#: models.py:81 models.py:140
 msgid "date added"
 msgstr ""
 
-#: models.py:85 models.py:165
+#: models.py:87 models.py:172
 msgid "album"
 msgstr ""
 
-#: models.py:86
+#: models.py:88
 msgid "albums"
 msgstr ""
 
-#: models.py:134
+#: models.py:141
 msgid "date modified"
 msgstr ""
 
-#: models.py:135
+#: models.py:142
 msgid "date taken"
 msgstr ""
 
-#: models.py:136
+#: models.py:143
 msgid "image"
 msgstr ""
 
-#: models.py:161
+#: models.py:168
 msgid "Public images will be displayed in the default views."
 msgstr ""
 
-#: models.py:174
+#: models.py:181
 msgid "picture"
 msgstr ""
 
-#: models.py:175
+#: models.py:182
 msgid "pictures"
 msgstr ""

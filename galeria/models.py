@@ -46,7 +46,9 @@ class Album(MPTTModel):
     title = models.CharField(_('title'), max_length=256)
     slug = models.SlugField(
         _('slug'),
-        max_length=256
+        max_length=256,
+        help_text=_('Automatically built from the title. A slug is a short '
+                    'label generally used in URLs.'),
     )
     description = models.TextField(_('description'), blank=True)
     is_public = models.BooleanField(
@@ -129,7 +131,12 @@ class PictureManager(models.Manager):
 
 class Picture(models.Model):
     title = models.CharField(_('title'), max_length=256)
-    slug = models.SlugField(_('slug'), max_length=256)
+    slug = models.SlugField(
+        _('slug'),
+        max_length=256,
+        help_text=_('Automatically built from the title. A slug is a short '
+                    'label generally used in URLs.'),
+    )
     date_added = models.DateTimeField(_('date added'), auto_now_add=True)
     date_modified = models.DateTimeField(_('date modified'), auto_now=True)
     date_taken = models.DateTimeField(_('date taken'), null=True, editable=False)
