@@ -7,8 +7,7 @@ from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
 
 from imagekit.models import ImageSpec
-from imagekit.processors import Transpose
-from imagekit.processors.resize import Crop, Fit
+from imagekit.processors import Anchor, ResizeToFill, ResizeToFit, Transpose
 from mptt.fields import TreeForeignKey
 from mptt.models import MPTTModel
 
@@ -16,13 +15,16 @@ from galeria import EXIF
 
 
 DISPLAY_IMAGE_PROCESSORS = getattr(settings, 'GALERIA_DISPLAY_IMAGE_PROCESSORS', [
-    Transpose(Transpose.AUTO), Fit(width=600, height=600)
+    Transpose(Transpose.AUTO),
+    ResizeToFit(width=600, height=600)
 ])
 THUMBNAIL_IMAGE_PROCESSORS = getattr(settings, 'GALERIA_THUMBNAIL_IMAGE_PROCESSORS', [
-    Transpose(Transpose.AUTO), Crop(width=128, height=128, anchor=Crop.CENTER)
+    Transpose(Transpose.AUTO),
+    ResizeToFill(width=128, height=128, anchor=Anchor.CENTER)
 ])
 COVER_IMAGE_PROCESSORS = getattr(settings, 'GALERIA_COVER_IMAGE_PROCESSORS', [
-    Transpose(Transpose.AUTO), Crop(width=128, height=128, anchor=Crop.CENTER)
+    Transpose(Transpose.AUTO),
+    ResizeToFill(width=128, height=128, anchor=Anchor.CENTER)
 ])
 
 ORDER_CHOICES = (
@@ -145,21 +147,18 @@ class Picture(models.Model):
         DISPLAY_IMAGE_PROCESSORS,
         image_field='original_image',
         options={'quality': 90},
-        pre_cache=True
     )
     thumbnail_image = ImageSpec(
         THUMBNAIL_IMAGE_PROCESSORS,
         image_field='original_image',
         format='JPEG',
         options={'quality': 75},
-        pre_cache=True
     )
     cover_image = ImageSpec(
         COVER_IMAGE_PROCESSORS,
         image_field='original_image',
         format='JPEG',
         options={'quality': 75},
-        autoconvert=False
     )
     description = models.TextField(_('description'), blank=True)
     is_public = models.BooleanField(

@@ -41,5 +41,5 @@ setup(
         'Programming Language :: Python',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
-    install_requires=['django-imagekit==1.1', 'FeinCMS==1.5.3']
+    install_requires=['django-imagekit>=2.0.1', 'django-mptt']
 )
