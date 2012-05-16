@@ -5,12 +5,12 @@ from galeria import views
 
 urlpatterns = patterns('',
     url(
-        '^(?P<year>\d{4})/(?P<month>[0-9]{2})/(?P<day>\d{2})/(?P<slug>[-\w]+)/$',
+        '(?P<album_slug>[-\w]+)/(?P<pk>[0-9]+)/(?P<slug>[-\w]+)/$',
         views.PictureDetail.as_view(),
         name='galeria-picture'
     ),
     url(
-        '^album/(?P<slug>[-\w]+)/$',
+        '^(?P<slug>[-\w]+)/$',
         views.AlbumDetail.as_view(),
         name='galeria-album'
     ),

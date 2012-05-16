@@ -179,7 +179,6 @@ class Picture(models.Model):
         get_latest_by = 'date_added'
         verbose_name = _('picture')
         verbose_name_plural = _('pictures')
-        unique_together = (('slug', 'album'),)
 
     @property
     def EXIF(self):
@@ -209,8 +208,7 @@ class Picture(models.Model):
     @models.permalink
     def get_absolute_url(self):
         return ('galeria-picture', None, {
-            'year' : str(self.date_added.year),
-            'month': str(self.date_added.month).zfill(2),
-            'day'  : str(self.date_added.day).zfill(2),
+            'album_slug' : str(self.album.slug),
+            'pk' : str(self.pk),
             'slug' : str(self.slug)
         })

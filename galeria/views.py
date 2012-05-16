@@ -12,8 +12,5 @@ class AlbumList(generic.list.ListView):
     paginate_by = 20
 
 
-class PictureDetail(generic.dates.DateDetailView):
-    date_field = 'date_added'
+class PictureDetail(generic.detail.DetailView):
     model = Picture
-    month_format = '%m'
-    slug_field = 'slug'
