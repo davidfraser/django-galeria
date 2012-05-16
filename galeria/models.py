@@ -184,15 +184,16 @@ class Picture(models.Model):
     def EXIF(self):
         image_file = open(self.original_image.path, 'rb')
         try:
-            data = EXIF.process_file(image_file)
+            return EXIF.process_file(image_file)
         except Exception, e:
             # TODO: log exception
             try:
-                data = EXIF.process_file(image_file, details=False)
+                return EXIF.process_file(image_file, details=False)
             except Exception, e:
-                pass # TODO: log exception
-        image_file.close()
-        return data
+                # TODO: log exception
+                return {}
+        finally:
+            image_file.close()
 
     def save(self, *args, **kwargs):
         super(Picture, self).save(*args, **kwargs)
