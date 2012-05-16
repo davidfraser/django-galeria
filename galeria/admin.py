@@ -1,4 +1,6 @@
+from django import forms
 from django.contrib import admin
+from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from imagekit.admin import AdminThumbnail
 
@@ -28,6 +30,9 @@ class InlinePictureAdmin(admin.TabularInline):
     extra = 1
     model = Picture
     prepopulated_fields = {'slug': ('title',)}
+    formfield_overrides = {
+        models.TextField: {'widget': forms.Textarea(attrs={'rows':3,'cols':30})}
+    }
 
 class AlbumAdmin(admin.ModelAdmin):
     form = AlbumAdminForm
