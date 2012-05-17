@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-11 19:57-0300\n"
+"POT-Creation-Date: 2012-05-16 21:45-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,16 +17,32 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: admin.py:22
+#: admin.py:26
 msgid "thumbnail"
 msgstr ""
 
-#: admin.py:45
+#: admin.py:53
 msgid "<em>Not defined</em>"
 msgstr ""
 
-#: admin.py:48 models.py:77
+#: admin.py:57 models.py:77
 msgid "cover"
+msgstr ""
+
+#: forms.py:33
+msgid "ZIP archive"
+msgstr ""
+
+#: forms.py:34
+msgid "Invalid or corrupted image files inside the ZIP archive are ignored."
+msgstr ""
+
+#: forms.py:38
+msgid "Album"
+msgstr ""
+
+#: forms.py:52
+msgid "File is not a ZIP archive or is corrupted."
 msgstr ""
 
 #: models.py:31
@@ -125,4 +141,31 @@ msgstr ""
 
 #: models.py:181
 msgid "pictures"
+msgstr ""
+
+#: views.py:45
+msgid "ZIP Upload"
+msgstr ""
+
+#: templates/galeria/admin/change_list.html:7
+#: templates/galeria/admin/zip_upload_form.html:11
+msgid "Upload a ZIP archive with a set of pictures"
+msgstr ""
+
+#: templates/galeria/admin/change_list.html:7
+msgid "Upload ZIP"
+msgstr ""
+
+#: templates/galeria/admin/zip_upload_form.html:12
+msgid ""
+"Note: all pictures will be non-public by default, so you can edit its "
+"properties before publish they to the web."
+msgstr ""
+
+#: templates/galeria/admin/zip_upload_form.html:15
+msgid "Please correct the error below."
+msgstr ""
+
+#: templates/galeria/admin/zip_upload_form.html:36
+msgid "Upload"
 msgstr ""

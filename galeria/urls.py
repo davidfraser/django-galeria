@@ -5,7 +5,7 @@ from galeria import views
 
 urlpatterns = patterns('',
     url(
-        '(?P<album_slug>[-\w]+)/(?P<pk>[0-9]+)/(?P<slug>[-\w]+)/$',
+        '^(?P<album_slug>[-\w]+)/(?P<pk>[0-9]+)/(?P<slug>[-\w]+)/$',
         views.PictureDetail.as_view(),
         name='galeria-picture'
     ),
@@ -15,4 +15,6 @@ urlpatterns = patterns('',
         name='galeria-album'
     ),
     url('^$', views.AlbumList.as_view(), name='galeria-album-list'),
+
+    url('admin/zip-upload/', views.zip_upload, name='galeria-zip-upload')
 )

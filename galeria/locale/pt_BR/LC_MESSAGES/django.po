@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Django Galeria\n"
 "Report-Msgid-Bugs-To: https://bitbucket.org/semente/django-galeria/issues\n"
-"POT-Creation-Date: 2012-05-11 19:57-0300\n"
-"PO-Revision-Date: 2012-05-11 22:57+0000\n"
+"POT-Creation-Date: 2012-05-16 21:45-0300\n"
+"PO-Revision-Date: 2012-05-17 00:50+0000\n"
 "Last-Translator: Guilherme Gondim <semente+transifex@taurinus.org>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.net/projects/p/django-galeria/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -18,17 +18,33 @@ msgstr ""
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
 
-#: admin.py:22
+#: admin.py:26
 msgid "thumbnail"
 msgstr "miniatura"
 
-#: admin.py:45
+#: admin.py:53
 msgid "<em>Not defined</em>"
 msgstr "<em>Não definida</em>"
 
-#: admin.py:48 models.py:77
+#: admin.py:57 models.py:77
 msgid "cover"
 msgstr "capa"
+
+#: forms.py:33
+msgid "ZIP archive"
+msgstr "Arquivo ZIP"
+
+#: forms.py:34
+msgid "Invalid or corrupted image files inside the ZIP archive are ignored."
+msgstr "Arquivos de imagens inválidos ou corrompidos dentro do ZIP são ignorados."
+
+#: forms.py:38
+msgid "Album"
+msgstr "Álbum"
+
+#: forms.py:52
+msgid "File is not a ZIP archive or is corrupted."
+msgstr "O arquivo não é um ZIP ou está corrompido."
 
 #: models.py:31
 msgid "Descending by addition date"
@@ -66,7 +82,7 @@ msgstr "slug"
 msgid ""
 "Automatically built from the title. A slug is a short label generally used "
 "in URLs."
-msgstr "Construído automaticamente a partir do título. Um slug é uma pequena etiqueta geralmente utilizada em URLs."
+msgstr "Construído automaticamente a partir do título. Slug é uma pequena etiqueta geralmente utilizada em URLs."
 
 #: models.py:55 models.py:163
 msgid "description"
@@ -127,3 +143,30 @@ msgstr "imagem"
 #: models.py:181
 msgid "pictures"
 msgstr "imagens"
+
+#: views.py:45
+msgid "ZIP Upload"
+msgstr "Envio de ZIP"
+
+#: templates/galeria/admin/change_list.html:7
+#: templates/galeria/admin/zip_upload_form.html:11
+msgid "Upload a ZIP archive with a set of pictures"
+msgstr "Envie um arquivo ZIP com um conjunto de imagens"
+
+#: templates/galeria/admin/change_list.html:7
+msgid "Upload ZIP"
+msgstr "Enviar ZIP"
+
+#: templates/galeria/admin/zip_upload_form.html:12
+msgid ""
+"Note: all pictures will be non-public by default, so you can edit its "
+"properties before publish they to the web."
+msgstr "Nota: por padrão, as imagens não serão públicas, então você poderá editar suas propriedades antes de publicá-las na web."
+
+#: templates/galeria/admin/zip_upload_form.html:15
+msgid "Please correct the error below."
+msgstr "Por favor, corrija o erro abaixo."
+
+#: templates/galeria/admin/zip_upload_form.html:36
+msgid "Upload"
+msgstr "Enviar"
