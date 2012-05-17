@@ -109,7 +109,7 @@ class Album(MPTTModel):
 
     @property
     def ordered_pictures(self):
-        return self.pictures.order_by(self.order)
+        return self.pictures.public().order_by(self.order)
 
     def get_album_tree(self):
         tree = [self.slug]
