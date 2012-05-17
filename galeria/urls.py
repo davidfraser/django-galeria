@@ -15,6 +15,5 @@ urlpatterns = patterns('',
         name='galeria-album'
     ),
     url('^$', views.AlbumList.as_view(), name='galeria-album-list'),
-
     url('admin/zip-upload/', views.zip_upload, name='galeria-zip-upload')
 )
