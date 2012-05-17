@@ -34,7 +34,8 @@ def zip_upload(request, template='galeria/admin/zip_upload_form.html'):
     if request.method == 'POST':
         form = ZipUploadForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            picture_list = form.process_zip_archive()
+            Picture.objects.bulk_create(picture_list)
 
             # Send user to album change view to edit the uploaded pictures
             album = form.cleaned_data['album']

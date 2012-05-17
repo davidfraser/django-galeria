@@ -64,7 +64,7 @@ class ZipUploadForm(forms.Form):
 
         for filename in zfile.namelist():
             title = os.path.basename(os.path.splitext(filename)[0])
-            slug = slug=slugify(title)
+            slug = slugify(title)
             picture = Picture(title=title, slug=slug, is_public=False, album=album)
             try:
                 content = zfile.read(filename)
@@ -76,7 +76,3 @@ class ZipUploadForm(forms.Form):
                 picture_list.append(picture)
 
         return picture_list
-
-    def save(self):
-        picture_list = self.process_zip_archive()
-        Picture.objects.bulk_create(picture_list)
