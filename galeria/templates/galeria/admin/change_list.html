@@ -4,7 +4,8 @@
 {% block object-tools-items %}
 {% if not is_popup %}
 <li>
-  <a href="{% url galeria-zip-upload %}" title="{% trans "Upload a ZIP archive with a set of pictures" %}">{% trans "Upload ZIP" %}</a>
+  <a href="{% url admin:galeria_picture_zip_upload %}"
+     title="{% trans "Upload a ZIP archive with a set of pictures" %}">{% trans "Upload ZIP" %}</a>
 </li>
 {% endif %}
 {{ block.super }}
