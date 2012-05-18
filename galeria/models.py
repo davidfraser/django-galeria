@@ -128,7 +128,7 @@ class PictureManager(models.Manager):
     use_for_related_fields = True
 
     def public(self):
-        return super(PictureManager, self).filter(is_public=True)
+        return super(PictureManager, self).filter(is_public=True, album__is_public=True)
 
 
 class Picture(models.Model):
