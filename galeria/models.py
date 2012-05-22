@@ -11,6 +11,7 @@ from django.utils.translation import ugettext_lazy as _
 from imagekit.models import ImageSpec
 from imagekit.processors import Anchor, ResizeToFill, ResizeToFit, Transpose
 from mptt.fields import TreeForeignKey
+from mptt.managers import TreeManager
 from mptt.models import MPTTModel
 
 from galeria import EXIF
@@ -39,7 +40,7 @@ ORDER_CHOICES = (
 )
 
 
-class AlbumManager(models.Manager):
+class AlbumManager(TreeManager):
     use_for_related_fields = True
 
     def public(self):
