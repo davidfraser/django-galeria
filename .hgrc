@@ -1,0 +1,3 @@
+[paths]
+default = ssh://hg@bitbucket.org/semente/django-galeria
+git = git+ssh://git@github.com/semente/django-galeria.git
