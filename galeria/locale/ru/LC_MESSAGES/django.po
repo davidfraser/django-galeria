@@ -1,0 +1,172 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Eugene MechanisM <contact@mechanism.name>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: Django Galeria\n"
+"Report-Msgid-Bugs-To: https://bitbucket.org/semente/django-galeria/issues\n"
+"POT-Creation-Date: 2012-05-16 21:45-0300\n"
+"PO-Revision-Date: 2012-05-22 19:09+0000\n"
+"Last-Translator: Eugene MechanisM <contact@mechanism.name>\n"
+"Language-Team: Russian (http://www.transifex.net/projects/p/django-galeria/language/ru/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: admin.py:26
+msgid "thumbnail"
+msgstr "миниатюра"
+
+#: admin.py:53
+msgid "<em>Not defined</em>"
+msgstr "<em>Не определено</em>"
+
+#: admin.py:57 models.py:77
+msgid "cover"
+msgstr "обложка"
+
+#: forms.py:33
+msgid "ZIP archive"
+msgstr "ZIP-архив"
+
+#: forms.py:34
+msgid "Invalid or corrupted image files inside the ZIP archive are ignored."
+msgstr "Неправильные или поврежденные файлы изображений внутри ZIP-архива будут проигнорированы."
+
+#: forms.py:38
+msgid "Album"
+msgstr "Альбом"
+
+#: forms.py:52
+msgid "File is not a ZIP archive or is corrupted."
+msgstr "Файл не является ZIP-архивом или поврежден."
+
+#: models.py:31
+msgid "Descending by addition date"
+msgstr "По убыванию даты добавления"
+
+#: models.py:32
+msgid "Ascending by addition date"
+msgstr "По возрастанию даты добавления"
+
+#: models.py:33
+msgid "Descending by date taken"
+msgstr "По убыванию даты снимка"
+
+#: models.py:34
+msgid "Ascending by date taken"
+msgstr "По возрастанию даты снимка"
+
+#: models.py:35
+msgid "Descending by modification date"
+msgstr "По убыванию даты изменения"
+
+#: models.py:36
+msgid "Ascending by modification date"
+msgstr "По возрастанию даты изменения"
+
+#: models.py:48 models.py:135
+msgid "title"
+msgstr "заголовок"
+
+#: models.py:50 models.py:137
+msgid "slug"
+msgstr "слаг"
+
+#: models.py:52 models.py:139
+msgid ""
+"Automatically built from the title. A slug is a short label generally used "
+"in URLs."
+msgstr "Автоматически из заголовка. Слаг это которткий лэйбл обычно используемый в URL-адресах."
+
+#: models.py:55 models.py:163
+msgid "description"
+msgstr "описание"
+
+#: models.py:57 models.py:165
+msgid "is public"
+msgstr "публично"
+
+#: models.py:59
+msgid "Only public albums will be displayed in the default views."
+msgstr "Только публичные альбомы будут показаны по умолчанию."
+
+#: models.py:62
+msgid "order"
+msgstr "порядок"
+
+#: models.py:66
+msgid "The default order of pictures for this album."
+msgstr "Порядок по умолчанию для изображений в этом альбоме."
+
+#: models.py:72
+msgid "parent album"
+msgstr "родительский альбом"
+
+#: models.py:83 models.py:142
+msgid "date added"
+msgstr "дата добавления"
+
+#: models.py:89 models.py:171
+msgid "album"
+msgstr "альбом"
+
+#: models.py:90
+msgid "albums"
+msgstr "альбомы"
+
+#: models.py:143
+msgid "date modified"
+msgstr "дата изменения"
+
+#: models.py:144
+msgid "date taken"
+msgstr "дата снимка"
+
+#: models.py:145
+msgid "image"
+msgstr "изображение"
+
+#: models.py:167
+msgid "Public images will be displayed in the default views."
+msgstr "Публичные изображения будут показаны по умолчанию."
+
+#: models.py:180
+msgid "picture"
+msgstr "изображение"
+
+#: models.py:181
+msgid "pictures"
+msgstr "изображения"
+
+#: views.py:45
+msgid "ZIP Upload"
+msgstr "Загрузка ZIP"
+
+#: templates/galeria/admin/change_list.html:7
+#: templates/galeria/admin/zip_upload_form.html:11
+msgid "Upload a ZIP archive with a set of pictures"
+msgstr "Загрузите ZIP-архив с изображениями"
+
+#: templates/galeria/admin/change_list.html:7
+msgid "Upload ZIP"
+msgstr "Загрузить ZIP-архив"
+
+#: templates/galeria/admin/zip_upload_form.html:12
+msgid ""
+"Note: all pictures will be non-public by default, so you can edit its "
+"properties before publish they to the web."
+msgstr "Примечание: все изображения будут приватными по умолчанию, так что вы можете редактировать их параметры перед тем как публиковать их в сеть."
+
+#: templates/galeria/admin/zip_upload_form.html:15
+msgid "Please correct the error below."
+msgstr "Пожалуйста исправьте ошибку ниже."
+
+#: templates/galeria/admin/zip_upload_form.html:36
+msgid "Upload"
+msgstr "Загрузить"
