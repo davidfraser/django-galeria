@@ -25,10 +25,6 @@ class AlbumForm(forms.ModelForm):
     class Meta:
         model = Album
 
-    def save(self, *args, **kwargs):
-        album = super(AlbumForm, self).save(*args, **kwargs)
-        return album
-
 
 class ZipUploadForm(forms.Form):
     zip_archive = forms.FileField(
