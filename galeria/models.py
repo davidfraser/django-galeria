@@ -19,15 +19,15 @@ from galeria import EXIF
 
 DISPLAY_IMAGE_PROCESSORS = getattr(settings, 'GALERIA_DISPLAY_IMAGE_PROCESSORS', [
     Transpose(Transpose.AUTO),
-    ResizeToFit(width=600, height=600)
+    ResizeToFit(width=640, height=640)
 ])
 THUMBNAIL_IMAGE_PROCESSORS = getattr(settings, 'GALERIA_THUMBNAIL_IMAGE_PROCESSORS', [
     Transpose(Transpose.AUTO),
-    ResizeToFill(width=128, height=128, anchor=Anchor.CENTER)
+    ResizeToFill(width=200, height=150, anchor=Anchor.CENTER)
 ])
 COVER_IMAGE_PROCESSORS = getattr(settings, 'GALERIA_COVER_IMAGE_PROCESSORS', [
     Transpose(Transpose.AUTO),
-    ResizeToFill(width=128, height=128, anchor=Anchor.CENTER)
+    ResizeToFill(width=200, height=150, anchor=Anchor.CENTER)
 ])
 
 ORDER_CHOICES = (
