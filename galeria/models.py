@@ -6,6 +6,7 @@ from datetime import datetime
 
 from django.db import models
 from django.conf import settings
+from django.core.files.storage import default_storage
 from django.utils.translation import ugettext_lazy as _
 
 from imagekit.models import ImageSpec
@@ -185,7 +186,7 @@ class Picture(models.Model):
 
     @property
     def EXIF(self):
-        image_file = open(self.original_image.path, 'rb')
+        image_file = default_storage.open(self.original_image.path, 'rb')
         try:
             return EXIF.process_file(image_file)
         except Exception, e:
