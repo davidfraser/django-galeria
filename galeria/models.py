@@ -186,7 +186,7 @@ class Picture(models.Model):
 
     @property
     def EXIF(self):
-        image_file = default_storage.open(self.original_image.path, 'rb')
+        image_file = default_storage.open(self.original_image.name, 'rb')
         try:
             return EXIF.process_file(image_file)
         except Exception, e:
