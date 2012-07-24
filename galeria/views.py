@@ -12,8 +12,7 @@ class AlbumDetail(generic.detail.DetailView):
 
 class AlbumList(generic.list.ListView):
     model = Album
-    queryset = Album.objects.public()
-    paginate_by = 20
+    queryset = Album.objects.public_root_nodes()
 
 
 class PictureDetail(generic.detail.DetailView):

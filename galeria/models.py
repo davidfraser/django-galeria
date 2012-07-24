@@ -47,6 +47,9 @@ class AlbumManager(TreeManager):
     def public(self):
         return super(AlbumManager, self).filter(is_public=True)
 
+    def public_root_nodes(self):
+        return super(AlbumManager, self).root_nodes().filter(is_public=True)
+
 
 class Album(MPTTModel):
     title = models.CharField(_('title'), max_length=256)
@@ -106,8 +109,8 @@ class Album(MPTTModel):
     def available_cover(self):
         if self.cover:
             return self.cover
-        elif self.parent:
-            return self.parent.available_cover
+        elif self.pictures.public():
+            return self.pictures.public().order_by('?')[0]
         else:
             return None
 
