@@ -35,7 +35,7 @@ ORDER_CHOICES = (
     ('-date_added', _('Descending by addition date')),
     ('date_added',  _('Ascending by addition date')),
     ('-date_taken', _('Descending by date taken')),
-    ('date_daten',  _('Ascending by date taken')),
+    ('date_taken',  _('Ascending by date taken')),
     ('-date_modified', _('Descending by modification date')),
     ('date_modified',  _('Ascending by modification date')),
 )
