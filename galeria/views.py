@@ -18,3 +18,8 @@ class AlbumList(generic.list.ListView):
 class PictureDetail(generic.detail.DetailView):
     model = Picture
     queryset = Picture.objects.public()
+
+
+class PictureList(generic.list.ListView):
+    model = Picture
+    queryset = Picture.objects.public()
