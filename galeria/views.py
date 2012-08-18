@@ -23,3 +23,4 @@ class PictureDetail(generic.detail.DetailView):
 class PictureList(generic.list.ListView):
     model = Picture
     queryset = Picture.objects.public()
+    paginate_by = 16
