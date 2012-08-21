@@ -207,7 +207,11 @@ class Picture(models.Model):
         if not self.date_taken:
             exif_date = self.EXIF.get('EXIF DateTimeOriginal', None)
             if exif_date:
-                self.date_taken = datetime.strptime(str(exif_date), '%Y:%m:%d %H:%M:%S')
+                try:
+                    self.date_taken = datetime.strptime(str(exif_date), '%Y:%m:%d %H:%M:%S')
+                except ValueError:
+                    # In case of bad formatted EXIF date...
+                    pass
                 super(Picture, self).save(*args, **kwargs)
 
     def __unicode__(self):
