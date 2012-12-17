@@ -109,8 +109,11 @@ class Album(MPTTModel):
     def available_cover(self):
         if self.cover:
             return self.cover
+        elif getattr(self, '_cover', None):
+            return self._cover
         elif self.pictures.public():
-            return self.pictures.public().order_by('?')[0]
+            self._cover = self.pictures.public().order_by('?')[0]
+            return self._cover
         else:
             return None
 
