@@ -111,10 +111,11 @@ class Album(MPTTModel):
             return self.cover
         elif getattr(self, '_cover', None):
             return self._cover
-        elif self.pictures.public():
-            self._cover = self.pictures.public().order_by('?')[0]
+        try:
+            _cov = self.pictures.public().order_by('?')[0]
+            self._cover = _cov
             return self._cover
-        else:
+        except IndexError:
             return None
 
     @property
