@@ -112,8 +112,7 @@ class Album(MPTTModel):
         elif getattr(self, '_cover', None):
             return self._cover
         try:
-            _cov = self.pictures.public().order_by('?')[0]
-            self._cover = _cov
+            self._cover = self.pictures.public().order_by('?')[0]
             return self._cover
         except IndexError:
             return None
