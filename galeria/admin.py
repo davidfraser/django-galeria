@@ -81,19 +81,10 @@ class AlbumAdmin(MPTTModelAdmin):
     change_list_template = 'galeria/admin/change_list.html'
     form = AlbumForm
     inlines = [InlinePictureAdmin]
-    list_display = ('title', 'album_cover', 'is_public', 'order')
+    list_display = ('title', 'is_public', 'order')
     list_editable = ('is_public', 'order')
     list_filter = ['is_public']
     prepopulated_fields = {'slug': ('title',)}
     search_fields = ('title', 'slug', 'description')
-
-    def album_cover(self, obj):
-        cover = obj.available_cover
-        if not cover:
-            return _('<em>Not defined</em>')
-        html = '<img src="%s" alt="%s" style="width: 42px;" />'
-        return html % (cover.cover_image.url, cover.title)
-    album_cover.allow_tags = True
-    album_cover.short_description = _('cover')
 
 admin.site.register(Album, AlbumAdmin)
