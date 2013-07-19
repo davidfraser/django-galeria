@@ -41,5 +41,5 @@ setup(
         'Programming Language :: Python',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
-    install_requires=['django-imagekit<3.0', 'django-mptt']
+    install_requires=['django-mptt']
 )

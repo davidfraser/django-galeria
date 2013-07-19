@@ -9,27 +9,12 @@ from django.conf import settings
 from django.core.files.storage import default_storage
 from django.utils.translation import ugettext_lazy as _
 
-from imagekit.models import ImageSpec
-from imagekit.processors import Anchor, ResizeToFill, ResizeToFit, Transpose
 from mptt.fields import TreeForeignKey
 from mptt.managers import TreeManager
 from mptt.models import MPTTModel
 
 from galeria import EXIF
 
-
-DISPLAY_IMAGE_PROCESSORS = getattr(settings, 'GALERIA_DISPLAY_IMAGE_PROCESSORS', [
-    Transpose(Transpose.AUTO),
-    ResizeToFit(width=640, height=640)
-])
-THUMBNAIL_IMAGE_PROCESSORS = getattr(settings, 'GALERIA_THUMBNAIL_IMAGE_PROCESSORS', [
-    Transpose(Transpose.AUTO),
-    ResizeToFill(width=200, height=150, anchor=Anchor.CENTER)
-])
-COVER_IMAGE_PROCESSORS = getattr(settings, 'GALERIA_COVER_IMAGE_PROCESSORS', [
-    Transpose(Transpose.AUTO),
-    ResizeToFill(width=200, height=150, anchor=Anchor.CENTER)
-])
 
 ORDER_CHOICES = (
     ('-date_added', _('Descending by addition date')),
@@ -153,23 +138,6 @@ class Picture(models.Model):
     date_modified = models.DateTimeField(_('date modified'), auto_now=True)
     date_taken = models.DateTimeField(_('date taken'), null=True, editable=False)
     original_image = models.ImageField(_('image'), upload_to=picture_imagefield_path)
-    display_image = ImageSpec(
-        DISPLAY_IMAGE_PROCESSORS,
-        image_field='original_image',
-        options={'quality': 90},
-    )
-    thumbnail_image = ImageSpec(
-        THUMBNAIL_IMAGE_PROCESSORS,
-        image_field='original_image',
-        format='JPEG',
-        options={'quality': 75},
-    )
-    cover_image = ImageSpec(
-        COVER_IMAGE_PROCESSORS,
-        image_field='original_image',
-        format='JPEG',
-        options={'quality': 75},
-    )
     description = models.TextField(_('description'), blank=True)
     is_public = models.BooleanField(
         _('is public'),

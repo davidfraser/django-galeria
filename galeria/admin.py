@@ -9,7 +9,6 @@ from django.db import models
 from django.template.response import TemplateResponse
 from django.utils.encoding import force_unicode
 from django.utils.translation import ugettext_lazy as _
-from imagekit.admin import AdminThumbnail
 from mptt.admin import MPTTModelAdmin
 
 from galeria.forms import AlbumForm, ZipUploadForm
@@ -18,19 +17,13 @@ from galeria.models import Album, Picture
 
 class PictureAdmin(admin.ModelAdmin):
     change_list_template = 'galeria/admin/change_list.html'
-    list_display = ('thumbnail', 'title', 'is_public', 'album', 'date_added')
+    list_display = ('title', 'is_public', 'album', 'date_added')
     list_display_links = ('title',)
     list_editable = ('album', 'is_public')
     list_filter = ('date_added', 'album', 'is_public')
     list_per_page = 20
     prepopulated_fields = {'slug': ('title',)}
     search_fields = ('title', 'slug', 'description')
-
-    thumbnail = AdminThumbnail(
-        image_field='thumbnail_image',
-        template='galeria/admin/thumbnail.html'
-    )
-    thumbnail.short_description = _('thumbnail')
 
     def get_urls(self):
         info = self.model._meta.app_label, self.model._meta.module_name
