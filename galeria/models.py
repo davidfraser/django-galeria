@@ -181,6 +181,21 @@ class Picture(models.Model):
         metadata.read()
         return collections.OrderedDict([(key, metadata[key].raw_value) for key in metadata.exif_keys + metadata.iptc_keys + metadata.xmp_keys])
 
+    @property
+    def key_metadata(self):
+        metadata = pyexiv2.ImageMetadata(default_storage.path(self.original_image.name))
+        metadata.read()
+        keys = metadata.iptc_keys
+        filtered_metadata = []
+        if 'Iptc.Application2.Caption' in keys:
+            description = metadata['Iptc.Application2.Caption'].value
+            filtered_metadata.append(('Description', " ".join(description)))
+        if 'Iptc.Application2.Keywords' in keys:
+            tags = metadata['Iptc.Application2.Keywords'].value
+            tags_str = " ".join([tag.strip() for tag in tags])
+            filtered_metadata.append(('Tags', tags_str))
+        return filtered_metadata
+
     def save(self, *args, **kwargs):
         super(Picture, self).save(*args, **kwargs)
         if not self.date_taken:
