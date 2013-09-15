@@ -15,6 +15,8 @@ from mptt.models import MPTTModel
 
 from galeria import EXIF
 
+import pyexiv2
+import collections
 
 ORDER_CHOICES = (
     ('-date_added', _('Descending by addition date')),
@@ -172,6 +174,12 @@ class Picture(models.Model):
                 return {}
         finally:
             image_file.close()
+
+    @property
+    def metadata(self):
+        metadata = pyexiv2.ImageMetadata(default_storage.path(self.original_image.name))
+        metadata.read()
+        return collections.OrderedDict([(key, metadata[key].raw_value) for key in metadata.exif_keys + metadata.iptc_keys + metadata.xmp_keys])
 
     def save(self, *args, **kwargs):
         super(Picture, self).save(*args, **kwargs)

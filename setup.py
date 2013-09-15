@@ -41,5 +41,5 @@ setup(
         'Programming Language :: Python',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
-    install_requires=['django-mptt']
+    install_requires=['django-mptt', 'pyexiv2']
 )
