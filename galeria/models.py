@@ -185,7 +185,7 @@ class Picture(models.Model):
     def key_metadata(self):
         metadata = pyexiv2.ImageMetadata(default_storage.path(self.original_image.name))
         metadata.read()
-        keys = metadata.iptc_keys
+        keys = metadata.exif_keys + metadata.iptc_keys
         filtered_metadata = []
         if 'Iptc.Application2.Caption' in keys:
             description = metadata['Iptc.Application2.Caption'].value
@@ -194,6 +194,13 @@ class Picture(models.Model):
             tags = metadata['Iptc.Application2.Keywords'].value
             tags_str = " ".join([tag.strip() for tag in tags])
             filtered_metadata.append(('Tags', tags_str))
+        if 'Exif.Image.DateTime' in keys:
+            image_date = metadata['Exif.Image.DateTime'].value
+            filtered_metadata.append(('Date', image_date))
+        if 'Exif.Image.Make' in keys and 'Exif.Image.Model' in keys:
+            camera_make = metadata['Exif.Image.Make'].value
+            camera_model = metadata['Exif.Image.Model'].value
+            filtered_metadata.append(('Camera', "%s %s" % (camera_make, camera_model)))
         return filtered_metadata
 
     def save(self, *args, **kwargs):
