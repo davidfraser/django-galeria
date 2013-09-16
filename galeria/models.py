@@ -175,21 +175,34 @@ class Picture(models.Model):
         finally:
             image_file.close()
 
-    @property
-    def metadata(self):
+    def get_metadata(self):
+        if hasattr(self, "_metadata"):
+            return self._metadata
         metadata = pyexiv2.ImageMetadata(default_storage.path(self.original_image.name))
         metadata.read()
+        self._metadata = metadata
+        return metadata
+
+    @property
+    def metadata(self):
+        metadata = self.get_metadata()
         return collections.OrderedDict([(key, metadata[key].raw_value) for key in metadata.exif_keys + metadata.iptc_keys + metadata.xmp_keys])
 
     @property
+    def metadata_description(self):
+        metadata = self.get_metadata()
+        if 'Iptc.Application2.Caption' in metadata.iptc_keys:
+            return ' '.join(metadata['Iptc.Application2.Caption'].value)
+        elif 'Exif.Photo.UserComment' in metadata.exif_keys:
+            return ' '.join(metadata['Exif.Photo.UserComment'].value)
+        return self.description or self.title
+
+    @property
     def key_metadata(self):
-        metadata = pyexiv2.ImageMetadata(default_storage.path(self.original_image.name))
-        metadata.read()
+        metadata = self.get_metadata()
         keys = metadata.exif_keys + metadata.iptc_keys
         filtered_metadata = []
-        if 'Iptc.Application2.Caption' in keys:
-            description = metadata['Iptc.Application2.Caption'].value
-            filtered_metadata.append(('Description', " ".join(description)))
+        filtered_metadata.append(('Description', self.metadata_description))
         if 'Iptc.Application2.Keywords' in keys:
             tags = metadata['Iptc.Application2.Keywords'].value
             tags_str = " ".join([tag.strip() for tag in tags])
